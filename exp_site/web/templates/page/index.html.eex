@@ -1,4 +1,4 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to LR Labs's Potions %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2>Welcome to LR Labs's Potions</h2>
+  <p class="lead">Mischief Managed</p>
 </div>
