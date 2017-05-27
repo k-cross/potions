@@ -26,6 +26,7 @@ defmodule ExpSite.ConnCase do
       import Ecto.Query
 
       import ExpSite.Router.Helpers
+      import ExpSite.TestHelpers
 
       # The default endpoint for testing
       @endpoint ExpSite.Endpoint
