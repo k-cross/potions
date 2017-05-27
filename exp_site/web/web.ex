@@ -36,6 +36,7 @@ defmodule ExpSite.Web do
 
       import ExpSite.Router.Helpers
       import ExpSite.Gettext
+      import ExpSite.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -58,6 +59,8 @@ defmodule ExpSite.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import ExpSite.Auth, only: [authenticate_user: 2]
     end
   end
 
