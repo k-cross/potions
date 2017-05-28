@@ -54,9 +54,9 @@ defmodule ExpSite.VideoController do
     end
   end
 
-  def show(conn, %{"id" => id}, user) do
-    video = Repo.get!(user_videos(user), id)
-    render(conn, "show.html", video: video)
+  def show(conn, %{"id" => id}) do
+    video = Repo.get!(Video, id)
+    render conn, "show.html", video: video
   end
 
   def edit(conn, %{"id" => id}, user) do
