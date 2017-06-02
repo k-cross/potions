@@ -2,7 +2,7 @@ defmodule ExpSite.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ExpSite.RoomChannel
+  channel "videos:*", ExpSite.VideoChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
