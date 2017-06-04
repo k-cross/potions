@@ -7,6 +7,7 @@ defmodule ExpSite.User do
     field :password, :string, virtual: true
     field :password_hash, :string
     has_many :videos, ExpSite.Video
+    has_many :annotations, ExpSite.Annotation
 
     timestamps()
   end

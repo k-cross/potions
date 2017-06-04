@@ -9,6 +9,7 @@ defmodule ExpSite.Video do
     field :description, :string
     belongs_to :user, ExpSite.User
     belongs_to :category, ExpSite.Category
+    has_many :annotations, ExpSite.Annotation
 
     timestamps()
   end
