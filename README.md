@@ -1,6 +1,6 @@
 # Potions
 
-This is a side project that's meant to demonstrate both the phoenix framework and elixir.
+This is a side project that's meant to demonstrate the phoenix framework, elixir, and react as a front-end technology.
 
 ## Notes
 
@@ -28,4 +28,12 @@ Think of actors like a purer form of object orientation, where actors are a lot 
 
 # References and Credits
 
+## Books
+
 * The Little Elixir and OTP Guidebook
+* Programing Phoenix 1.2
+
+## Internet
+
+* phoenix-framework documentation
+* ecto documentation
