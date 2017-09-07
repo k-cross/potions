@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Profile extends Component {
   render() {
@@ -58,7 +57,8 @@ class Profile extends Component {
               <a
                 className="btn btn-primary"
                 target="_blank"
-                href={this.props.userData.html_url}>
+                href={this.props.userData.html_url}
+              >
                 Visit Profile
               </a>
             </div>

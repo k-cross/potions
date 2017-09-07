@@ -4,6 +4,12 @@ This is a side project that's meant to demonstrate the phoenix framework, elixir
 
 ## Notes
 
+### Secrets
+
+Many of these example projects are programmed without security in mind, so there are embedded passwords and other secrets.
+If you plan to use these as examples, they will not work as all embedded secrets are changed before the examples are made public.
+If you plan to use this code in production, you are stupid.
+
 ### Actor Concurrency Model
 
 Think of actors like a purer form of object orientation, where actors are a lot like objects.

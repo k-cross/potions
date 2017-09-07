@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Profile from "./github/profile";
+import Search from "./github/search";
 
 class Navigation extends Component {
   render() {
@@ -55,6 +56,19 @@ class App extends Component {
     };
   }
 
+  handleFormSubmit(username) {
+    this.setState({ username: username }, () => {
+      this.getUserData().then(
+        res => {
+          this.setState({ userData: res });
+        },
+        rej => {
+          console.log(rej);
+        }
+      );
+    });
+  }
+
   getUserData = () => {
     const gituri =
       "https://api.github.com/users/" +
@@ -84,7 +98,6 @@ class App extends Component {
     this.getUserData().then(
       res => {
         this.setState({ userData: res });
-        console.log(this.state.userData);
       },
       reject => {
         console.log(reject);
@@ -99,7 +112,9 @@ class App extends Component {
           <Navigation />
         </div>
         <div className="container">
-          <Profile userData = {this.state.userData} />
+          <br />
+          <Profile userData={this.state.userData} />
+          <Search onFormSubmit={this.handleFormSubmit.bind(this)} />
         </div>
       </div>
     );
