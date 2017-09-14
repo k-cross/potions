@@ -1,33 +1,43 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import UserListElement from './UserListElement';
+import { Table } from 'react-bootstrap';
+import UserDelete from './UserDelete';
 
-export default class UserList extends Component {
+class UserList extends Component {
   render() {
     return (
-     <table>
-       <thead>
-         <tr>
-           <th>ID</th>
-           <th>Username</th>
-           <th>Job</th>
-           <th>Edit</th>
-           <th>Delete</th>
-         </tr>
-       </thead>
-       <tbody>
-         {this.props.users.map((user, index) => {
-           return(
-             <UserListElement key={user.id} user={user}/>
-           );
-         })
-        }
-       </tbody>
-     </table>
+      <div>
+        <Table boardered hover responsive striped>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Job</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.users.map((user, index) => {
+              return(
+                <UserListElement key={user.id} user={user}/>
+              );
+            })
+           }
+          </tbody>
+        </Table>
+        <UserDelete/>
+      </div>
     );
   }
 }
 
-UserList.propTypes = {
-  users: PropTypes.object.isRequired
+//export connected class
+function mapStateToProps(state) {
+  return ({
+    users: state.users.list,
+  });
 }
+
+export default connect(mapStateToProps) (UserList);
