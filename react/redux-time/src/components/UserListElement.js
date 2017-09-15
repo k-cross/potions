@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class UserListElement extends Component {
   constructor(props) {
@@ -15,11 +16,11 @@ class UserListElement extends Component {
         <td>#{user.id}</td>
         <td>{user.username}</td>
         <td>{user.job}</td>
-        <td><a href={'/user-edit/' + user.id}>
+        <td><Link to={'/user-edit/' + user.id}>
           <Button bsSize="xsmall">
             Edit <Glyphicon glyph="edit"/> 
           </Button>
-        </a></td>
+        </Link></td>
         <td><Button bsSize="xsmall" data-user={user.username} data-id={user.id}
           onClick={this.modalDeleteShow}>
           Delete <Glyphicon glyph="remove-circle"/>
